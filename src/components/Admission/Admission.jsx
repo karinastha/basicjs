@@ -1,31 +1,28 @@
-import React, { useState , useEffect} from "react";
+import React, { useState } from "react";
 
 function Admission() {
     const data = { firstname: "", lastname:"", email: "", phonenumber: "", DateOfBirth:"" , Options:""};
     const [inputData, setInputData] = useState(data)
-    const [flag, setFlag] = useState(false);
-    useEffect(() => {
-        console.log("Registered")
-    }, [flag])
+    // const [flag, setFlag] = useState(false);
+   
 
-    function handleData(e) {
-        setInputData({ ...inputData, [e.target.name]: e.target.value })
-        console.log(inputData);
+    // function handleData(e) {
+    //     setInputData({ ...inputData, [e.target.name]: e.target.value })
+    //     console.log(inputData);
 
-    }
-    function handleSubmit(e) {
-        e.preventDefault();
-        if (!inputData.firstname || !inputData.lastname ||  !inputData.email || !inputData.phonenumber || !inputData.DateOfBirth) {
-            alert("All feilds are mandatory");
-        }
-        else {
-            setFlag(true)
-        }
-    }
+    // }
+    // function handleSubmit(e) {
+    //     e.preventDefault();
+    //     if (!inputData.firstname || !inputData.lastname ||  !inputData.email || !inputData.phonenumber || !inputData.DateOfBirth) {
+    //         alert("All feilds are mandatory");
+    //     }
+    //     else {
+    //         setFlag(true)
+    //     }
+    // }
     return (
         <div>
-            <pre> {(flag) ? <h2 className="ui-define">helllo {inputData.firstname}, You have
-                Registered sucessfuly </h2> : ""}</pre>
+           
             <form className="container" onSubmit={handleSubmit}>
                 <div className="header">
                     <h1> Admission Form</h1>

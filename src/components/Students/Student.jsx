@@ -1,32 +1,42 @@
-import React, { useState , useEffect} from "react";
+import React, { useState } from "react";
 
 function Student() {
     const data = { name: "", email: "", phonenumber: "" };
     const [inputData, setInputData] = useState(data)
-    const [flag, setFlag] = useState(false);
-    useEffect(() => {
-        console.log("Registered")
-    }, [flag])
+   
+    // useEffect(() => {
+    //     console.log("Registered")
+    // }, [flag])
 
-    function handleData(e) {
-        setInputData({ ...inputData, [e.target.name]: e.target.value })
-        console.log(inputData);
+    // function handleData(e) {
+    //     setInputData({ ...inputData, [e.target.name]: e.target.value })
+    //     console.log(inputData);
 
-    }
-    function handleSubmit(e) {
-        e.preventDefault();
-        if (!inputData.name || !inputData.email || !inputData.phonenumber) {
-            alert("All feilds are mandatory");
-        }
-        else {
-            setFlag(true)
-        }
-    }
+    // }
+    // function handleSubmit(e) {
+    //     e.preventDefault();
+    //     if (!inputData.name || !inputData.email || !inputData.phonenumber) {
+    //         alert("All feilds are mandatory");
+    //     }
+    //     else {
+    //         setFlag(true)
+    //     }
+    // }
+    handleSubmit = event => {
+        event.preventDefault();
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const phonenumber = event.target.phonenumber.value;
+        const formObject = { name, email, phonenumber };
+        setState(prevState => ({
+          formData: [...prevState.formData, formObject]
+        }));
+      };
+    
     return (
         <div>
-            <pre> {(flag) ? <h2 className="ui-define">helllo {inputData.name}, You have
-                Registered sucessfuly </h2> : ""}</pre>
-            <form className="container" onSubmit={handleSubmit}>
+            
+            <form className="container" onSubmit={this.handleSubmit}>
                 <div className="header">
                     <h1> Student Form</h1>
                 </div>
