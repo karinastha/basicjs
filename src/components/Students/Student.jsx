@@ -122,7 +122,7 @@ function Student() {
           </button>
         </div>
 
-      <table border={1} cellPadding={20} width="50%">
+      <table border={1} cellPadding={20} width="80%">
       <thead>
         <tr>
           <th>Name</th>

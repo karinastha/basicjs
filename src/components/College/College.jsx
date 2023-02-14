@@ -64,6 +64,34 @@ function College() {
             Submit
           </button>
         </div>
+        <table border={1} cellPadding={30} width="80%">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Faculty</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {
+          college.map(
+            (info , id) => {
+              return(
+                <tr key={id}>
+                  <td> {info.fullname} </td>
+                  <td> {info.email} </td>
+                  <td> {info.phonenumber} </td>
+                  <td> {info.faculty} </td>
+
+                 </tr>
+              )
+            }
+          )
+        }
+      </tbody>
+    </table>
       </form>
     </div>
   );

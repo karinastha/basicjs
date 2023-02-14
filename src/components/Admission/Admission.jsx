@@ -142,6 +142,36 @@ function Admission() {
             Submit
           </button>
         </div>
+
+        <table border={1} cellPadding={20} width="100%">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Birth Date</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        {
+          admission.map(
+            (info , id) => {
+              return(
+                <tr key={id}>
+                  <td> {info.name} </td>
+                  <td> {info.email} </td>
+                  <td> {info.phonenumber} </td>
+                  <td> {info.birthdate} </td>
+
+                 </tr>
+              )
+            }
+          )
+        }
+      </tbody>
+    </table>
       </form>
     </div>
   );
