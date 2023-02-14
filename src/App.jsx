@@ -9,12 +9,12 @@ const App = () => {
     return (
         <div className="App">
             <Student />
-            <div className="college-form">
+            {/* <div className="college-form">
                     <College />
                       <div className='admission-form'>
                         <Admission /> 
                     </div>
-            </div>
+            </div> */}
       </div>
     );
 };

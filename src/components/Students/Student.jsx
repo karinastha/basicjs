@@ -71,7 +71,10 @@ function Student() {
 
   const handleSubmit = () => {
     setStudent([...student, inputData]);
-    localStorage.setItem('formValues', JSON.stringify(inputData));
+    const storedValues = localStorage.setItem('formValues', JSON.stringify(inputData));
+    if (storedValues) {
+      setStudent(JSON.parse(storedValues));
+    }
   };
  
   console.log(student);
@@ -118,8 +121,36 @@ function Student() {
             Submit
           </button>
         </div>
-      </form>
+
+      <table border={1} cellPadding={20} width="50%">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {
+          student.map(
+            (info , id) => {
+              return(
+                <tr key={id}>
+                  <td> {info.name} </td>
+                  <td> {info.email} </td>
+                  <td> {info.phonenumber} </td>
+                 </tr>
+              )
+            }
+          )
+        }
+      </tbody>
+    </table>
+    </form>
     </div>
+
+    
   );
 }
 export default Student;
