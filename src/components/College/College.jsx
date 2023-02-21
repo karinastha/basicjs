@@ -64,7 +64,7 @@ function College() {
             Submit
           </button>
         </div>
-        <table border={1} cellPadding={30} width="80%">
+        <table border={1} cellPadding={30} width="100%">
       <thead>
         <tr>
           <th>Full Name</th>
